@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Minsa</title>
+<link rel="stylesheet" th:href="@{/css/styleV.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="row mt-2" style="margin-left: 20px; margin-top: 20px;">
+		<img alt="" th:src="@{/imagenes/logo.jpg}" style="width: 100px">
+	</div>
+	<div class="container">
+		
+
+		<div class="card mt-4">
+			<div class="card-header bg-info text-white"
+				style="text-align: center; font-size: 20px">Formulario de
+				Referencia</div>
+			<div class="card-body">
+				<form th:action="@{/updateReferenciaAObservada}"
+					th:object="${referencia}" method="post">
+					<p>1-. Datos Generales</p>
+					<hr>
+					<label>Fecha:</label> <input disabled="disabled" type="date" th:field="*{fecha}">
+					<label class="ml-4">Hora:</label> <input type="text" disabled="disabled"
+						th:field="*{hora}" /> <br /> <br /> <label>Establecimiento
+						de Origen de la Referencia</label> <input class="bg-muted" type="text"
+						th:field="*{origen}" disabled="disabled" /> <br /> <br /> <label>Establecimiento
+						de Destino de la Referencia</label> <select disabled="disabled"
+						th:field="*{Establecimientodestino}" class="form-control col-md-6">
+						<option th:each="e:${establecimientos}" th:value="${e.id}"
+							th:text="${e.nombre}" />
+					</select> <br /> <br />
+					<p>2-. Identificacion del Usuario</p>
+					<hr>
+					<label>DNI</label> <input class="col-md-4" disabled="disabled"
+						th:field="*{dniPaciente}" type="text" /> <br> <br> <label>Apellido
+						Paterno:</label> <input disabled="disabled" class="col-md-4" th:field="*{apePatPaciente}"
+						type="text" /><label class="ml-3">Apellido Materno:</label> <input disabled="disabled"
+						class="col-md-4" type="text" th:field="*{apeMatPaciente}" /> <br />
+					<br /> <label>Nombres:</label> <input type="text" disabled="disabled"
+						style="margin-left: 50px" class="col-md-3"
+						th:field="*{nomPaciente}" /> 
+						
+						<input disabled="disabled" th:field="*{genero}" style="margin-left: 20px" class="form-check-input" type="radio" name="exampleRadios" id="genero1" value="Masculino"> 
+						
+						<label
+						style="margin-left: 38px; margin-bottom: 20px"
+						class="form-check-label">M</label> 
+						
+						<input disabled="disabled" th:field="*{genero}" style="margin-left: 20px" class="form-check-input" type="radio" id="genero2" value="Femenino"> 
+						
+						<label
+						style="margin-left: 38px; margin-bottom: 20px"
+						class="form-check-label">F</label> <label
+						style="margin-left: 50px">Edad</label> 
+						
+						<input th:field="*{edad}" style="margin-left: 50px" type="text" class="col-md-1" disabled="disabled"> <br />
+
+					<label>Direccion:</label> <input type="text" disabled="disabled"
+						th:field="*{direcPaciente}" style="margin-left: 50px"
+						class="col-md-3" /> <label>Distrito:</label> <input disabled="disabled"
+						th:field="*{distriPaciente}" type="text" style="margin-left: 50px"
+						class="col-md-3" /> <br /> <br /> <label>Departamento:</label>
+					<input disabled="disabled" type="text" th:field="*{dptoPaciente}"
+						style="margin-left: 50px" class="col-md-3" /> <br /> <br />
+
+					<p>3-. Resumen de la Historia Clinica</p>
+					<hr>
+					<label>Anamnesis</label> <br />
+					<textarea th:field="*{resumen1}" rows="4" cols="130" disabled="disabled"
+						style="resize: none"></textarea>
+					<br /> <label>Examen Fisico</label> <br />
+					<textarea disabled="disabled" th:field="*{resumen2}" rows="4" cols="130"
+						style="resize: none"></textarea>
+					<br /> <label>Examen Auxiliares</label> <br />
+					<textarea disabled="disabled" th:field="*{resumen3}" rows="4" cols="130"
+						style="resize: none"></textarea>
+					<br /> <label>Diagnostico</label> <br />
+					<textarea disabled="disabled" th:field="*{resumen4}" rows="4" cols="130"
+						style="resize: none"></textarea>
+					<br /> <label>Tratamiento</label> <br />
+					<textarea disabled="disabled" th:field="*{resumen5}" rows="4" cols="130"
+						style="resize: none"></textarea>
+					<br /> <br />
+					<p>4-. Datos de la Referencia</p>
+					<hr>
+					<p>Coordinacion de la Referencia</p>
+					
+					<label class="form-check-label">Emergencia </label> 
+					<input disabled="disabled" th:field="*{coordReferencia}" style="margin-left: 10px;" class="form-check-input" type="radio" id="coordReferencia1" value="Emergencia"> 
+					
+					<label class="form-check-label" style="margin-left: 50px">Consulta Externa </label> 
+					<input disabled="disabled" th:field="*{coordReferencia}" style="margin-left: 10px" class="form-check-input" type="radio" id="coordReferencia2" value="Consulta Externa"> 
+					
+					<label class="form-check-label" style="margin-left: 50px">Apoyo al Diagnostico(Adjuntar Orden)</label> 
+					<input disabled="disabled" th:field="*{coordReferencia}" style="margin-left: 20px" class="form-check-input" type="radio" id="coordReferencia3" value="Apoyo Al Diagnostico"> 
+					
+					
+					<br /> <br /> 
+					<input disabled="disabled" type="text" class="col-md-11" th:field="*{servicios}"> <br />
+					<br />
+
+					<p>Especialidad de Destino</p>					
+					<select th:field="*{especialidadDestino}" disabled="disabled"
+						class="form-control col-md-6">
+						<option value="">SELECCIONAR</option>
+						<option th:each="s:${servicios}" th:value="${s.id}"
+							th:text="${s.nombre}" />
+					</select> <br />
+					<br />
+
+					<p>Condiciones del Paciente al Inicio del Traslado</p>
+					<label class="form-check-label">Estable</label> <input disabled="disabled"
+						style="margin-left: 10px;" class="form-check-input"
+						th:field="*{condicionPaciente}" type="radio" id="condicion1"
+						value="Estable" checked> <label style="margin-left: 50px"
+						class="form-check-label">Mal Estado</label> <input disabled="disabled"
+						style="margin-left: 10px;" class="form-check-input"
+						th:field="*{condicionPaciente}" type="radio" id="condicion2"
+						value="Mal Estado">
+
+					<textarea disabled="disabled" th:field="*{resumen6}" rows="5" cols="130"
+						style="resize: none"></textarea>
+					<br /> <br />
+						<a style="margin-left: 50px" th:href="@{/habilitarCamposRefObserv/{id} (id=${referencia.id})}" class="btn btn-primary">Habilitar</a>
+						<a style="margin-left: 50px" th:href="@{/refObservadas}" class="btn btn-primary">Cerrar</a>
+						
+						<input type="hidden" th:field="*{id}">
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/funciones.js}"></script>
+</body>
+</html>

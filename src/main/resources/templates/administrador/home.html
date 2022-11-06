@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Minsa</title>
+
+<link rel="stylesheet" th:href="@{/css/style2.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="row" style="margin-left: 20px; margin-top: 20px;">
+				<img alt="" th:src="@{/imagenes/logo.jpg}" style="width: 100px">
+			</div>
+		<div class="container">
+			
+		
+			<div class="row">
+				<div class="col-md-6" style="margin-top: 80px">
+					<ul class="list-group">
+							<a class="btnn btn-secondaryy" th:href="@{/administrador/form}">Ingresar Referencia
+							</a>
+							<a class="btnn btn-secondaryy" th:href="@{/administrador/listarReferencia}">Consultar Referencia
+							</a>
+							<a class="btnn btn-secondaryy"  th:href="@{/administrador/listarServicios}">Cartera de Servicios
+							</a>
+							<a class="btnn btn-secondaryy" th:href="@{/administrador/servDispRegion}">Centros de Referencia Disponibles	
+							</a>
+							<a	class="btnn btn-secondaryy" th:href="@{/cerrar}">Cerrar Sesion</a>
+					</ul>
+				</div>
+			
+			</div>
+		</div>
+		
+			<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/funciones.js}"></script>
+</body>
+</html>

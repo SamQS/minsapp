@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="utf-8">
+<title>Minsa</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="row" style="margin-left: 20px; margin-top: 20px;">
+			<img alt="" src="imagenes/logo.jpg" style="width: 120px">
+		</div>
+	<div class="container">	
+
+		<div class="row" style="margin-left: -90px">
+			<div class="col-md-6" style="margin-top: 20px">
+				<ul class="list-group">
+						<a class="btnn btn-secondaryy" th:href="@{/form}">Registrar Usuario</a>					
+
+						<a	class="btnn btn-secondaryy" th:href="@{/listar}">Administrar
+							Usuario</a>
+						<a class="btnn btn-secondaryy" href="#">Produccion por Usuario</a>
+						
+						<a class="btnn btn-secondaryy" th:href="@{/cerrar}">Cerrar Sesion</a>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/funciones.js}"></script>
+</body>
+</html>

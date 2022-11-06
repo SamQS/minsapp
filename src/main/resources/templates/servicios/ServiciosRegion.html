@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="row mt-2" style="margin-left: 20px; margin-top: 20px;">
+		<img alt="" th:src="@{/imagenes/logo.jpg}" style="width: 100px">
+	</div>
+	<div class="container">
+
+		
+		<div class="card mt-4">
+			<div class="card-header bg-info text-white"
+				style="text-align: center; font-size: 20px">CENTROS REFERENCIAS DISPONIBLES</div>
+		
+	
+		<div class="card-body">
+		<table id="table_id" class="table display">
+			<thead>
+				<tr>
+					<th scope="col">Codigo</th>
+					<th scope="col">Establecimiento</th>
+					<th scope="col">Nivel</th>
+					<th scope="col">Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="e: ${estabDisponibles}">
+					<td th:text="${e.codigo}"></td>
+					<td th:text="${e.nombre}"></td>
+					<td th:text="${e.nivel}"></td>
+					<td th:text="${e.estado}"></td>
+					<td><a class="btn btn-info" th:href="@{/administrador/detalle/{id} (id=${e.id})}">Detalles</a></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</div>
+		<div>
+			<a class="btn btn-primary btn-sm my-3" th:href="@{/administrador}">REGRESAR</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/funciones.js}"></script>
+</body>
+</html>

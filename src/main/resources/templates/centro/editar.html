@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Minsa</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="row mt-2" style="margin-left: 20px; margin-top: 20px;">
+			<img alt="" th:src="@{/imagenes/logo.jpg}" style="width: 100px">
+		</div>
+	<div class="container">
+		
+
+		<div class="card mt-4">
+			<div class="card-header bg-info text-white"
+				style="text-align: center; font-size: 20px">MODIFICAR CENTRO</div>
+			<div class="card-body">
+				<form th:action="@{/updateCentro}" th:object="${establecimiento}" method="post">
+					<div class="form-group row">
+						<label for="codigo" class="col-sm-2 col-form-label">CODIGO:</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{codigo}" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="nombre" class="col-sm-2 col-form-label">NOMBRE DEL CENTRO:</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{nombre}" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="nivel" class="col-sm-2 col-form-label">NIVEL:</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{nivel}" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="direccion" class="col-sm-2 col-form-label">DIRECCION:</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{direccion}" class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="distrito" class="col-sm-2 col-form-label">DISTRITO:</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{distrito}" class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="estado" class="col-sm-2 col-form-label">ESTADO: </label>
+						<div class="col-sm-6">
+
+							<select th:field="*{estado}" class="form-control">
+								<option value="DISPONIBLE">DISPONIBLE</option>
+								<option value="NO DISPONIBLE">NO DISPONIBLE</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="servicios" class="col-sm-2 col-form-label">Servicios</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{servicios}" class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group row" style=" margin-left: 451px">
+						<div class="col-sm-3 mt-4">
+							<input type="submit" class="form-control btn-primary"
+								value="Actualizar" />
+						</div>
+
+					</div>
+
+					<input type="hidden" th:field="*{id}">
+				</form>
+			</div>
+		</div>
+		<div>
+			<a class="btn btn-primary btn-sm my-3" th:href="@{/listarCentros}">REGRESAR</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/funciones.js}"></script>
+</body>
+</html>
