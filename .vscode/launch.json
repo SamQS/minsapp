@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AppMinsaApplication<app-minsa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "java.springboot.minsa.AppMinsaApplication",
+            "projectName": "app-minsa",
+            "args": ""
+        }
+    ]
+}
