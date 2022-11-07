@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Minsa</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="row mt-2" style="margin-left: 20px; margin-top: 20px;">
+		<img alt="" th:src="@{/imagenes/logo.jpg}" style="width: 100px">
+	</div>
+	<div class="container">
+		
+		<div>
+			<a th:href="@{/menuAsistencial}">Volver</a>
+		</div>
+		<div class="card mt-4">
+			<div class="card-header bg-info text-white"
+				style="text-align: center; font-size: 20px">MODIFICAR SERVICIO</div>
+			<div class="card-body">
+				<form th:action="@{/updateServicio}" th:object="${servicio}" method="post">
+					<div class="form-group row">
+						<label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{nombre}" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="descripcion" class="col-sm-2 col-form-label">Descripcion</label>
+						<div class="col-sm-6">
+							<textarea th:field="*{descripcion}" rows="3" cols="80"
+								style="resize: none"></textarea>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="destino" class="col-sm-2 col-form-label">Destino</label>
+						<div class="col-sm-6">
+							<select th:field="*{destino}" class="form-control">
+								<option value="">SELECCIONAR</option>
+								<option value="INTERNO">INTERNO</option>
+								<option value="EXTERNO">EXTERNO</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="estado" class="col-sm-2 col-form-label">Estado
+							del Servicio</label>
+						<div class="col-sm-6">
+							<select th:field="*{estado}" class="form-control">
+								<option value="">SELECCIONAR</option>
+								<option value="DISPONIBLE">DISPONIBLE</option>
+								<option value="NO DISPONIBLE">NO DISPONIBLE</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-sm-3 mt-4">
+							<input type="submit" class="form-control btn-primary"
+								value="Modificar" />
+						</div>
+
+					</div>
+					<input type="hidden" th:field="*{id}">
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/funciones.js}"></script>
+</body>
+</html>

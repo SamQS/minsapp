@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+
+	<div class="row mt-2" style="margin-left: 20px; margin-top: 20px;">
+			<img alt="" th:src="@{/imagenes/logo.jpg}" style="width: 100px">
+		</div>
+	<div class="container">
+		
+
+		<h1>DETALLE DEL CENTRO DISPONIBLE</h1>
+
+		<div class="card">
+			<div class="card-header bg-info text-white text-center" style="text-align: center; font-size: 20px"
+				th:text="${establecimiento.nombre}"></div>
+			<div class="card-body">
+				<div class="container" style="margin-left: 150px">
+					<h4 style="margin-top: 25px" th:text="'DIRECCIÓN: ' + ${establecimiento.direccion}"></h4>
+					<h4 style="margin-top: 25px" th:text="'DISTRITO: ' + ${establecimiento.distrito}"></h4>
+					<h4 style="margin-top: 25px" th:text="'SERVICIOS: ' + ${establecimiento.servicios}"></h4>
+
+				</div>
+	
+			</div>
+		</div>
+		<div style="margin-top: 60px">
+			<a th:href="@{/administrador/servDispRegion}" class="btn btn-primary">Regresar</a>
+			</div>
+
+	</div>
+
+</body>
+</html>

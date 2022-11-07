@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Minsa</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+
+</head>
+<body>
+	<div class="row mt-2" style="margin-left: 20px; margin-top: 20px;">
+		<img alt="" th:src="@{/imagenes/logo.jpg}" style="width: 100px">
+	</div>
+	<div class="container">
+
+		
+
+		<div class="card mt-4">
+			<div class="card-header bg-info text-white"
+				style="text-align: center; font-size: 20px">CARTERA DE SERVICIOS</div>
+			<div class="card-body">
+
+
+
+				<table class="table display" id="table_id">
+					<thead>
+						<tr>
+							<th>Codigo</th>
+							<th>Servicio</th>
+							<th>Estado</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="s : ${servicios}">
+							<td th:text="${s.id}"></td>
+							<td th:text="${s.nombre}"></td>
+							<td th:text="${s.estado}"></td>
+							<td th:text="${s.destino}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div>
+			<a class="btn btn-primary btn-sm my-3" th:href="@{/administrador}">REGRESAR</a>
+		</div>
+	</div>
+
+	<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/jquery-ui.min.js}"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script th:src="@{/js/funciones.js}"></script>
+	<script type="text/javascript" charset="utf8"
+		src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#table_id').DataTable();
+		});
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#table_id').DataTable();
+		});
+		$
+				.extend(
+						true,
+						$.fn.dataTable.defaults,
+						{
+							"language" : {
+								"decimal" : ",",
+								"thousands" : ".",
+								"info" : "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+								"infoEmpty" : "Mostrando registros del 0 al 0 de un total de 0 registros",
+								"infoPostFix" : "",
+								"infoFiltered" : "(filtrado de un total de _MAX_ registros)",
+								"loadingRecords" : "Cargando...",
+								"lengthMenu" : "Mostrar _MENU_ registros",
+								"paginate" : {
+									"first" : "Primero",
+									"last" : "Último",
+									"next" : "Siguiente",
+									"previous" : "Anterior"
+								},
+								"processing" : "Procesando...",
+								"search" : "Buscar:",
+								"searchPlaceholder" : "Usuario",
+								"zeroRecords" : "No se encontraron resultados",
+								"emptyTable" : "Ningún dato disponible en esta tabla",
+								"aria" : {
+									"sortAscending" : ": Activar para ordenar la columna de manera ascendente",
+									"sortDescending" : ": Activar para ordenar la columna de manera descendente"
+								},
+								//only works for built-in buttons, not for custom buttons
+								"buttons" : {
+									"create" : "Nuevo",
+									"edit" : "Cambiar",
+									"remove" : "Borrar",
+									"copy" : "Copiar",
+									"csv" : "fichero CSV",
+									"excel" : "tabla Excel",
+									"pdf" : "documento PDF",
+									"print" : "Imprimir",
+									"colvis" : "Visibilidad columnas",
+									"collection" : "Colección",
+									"upload" : "Seleccione fichero...."
+								},
+								"select" : {
+									"rows" : {
+										_ : '%d filas seleccionadas',
+										0 : 'clic fila para seleccionar',
+										1 : 'una fila seleccionada'
+									}
+								}
+							}
+						});
+	</script>
+
+
+</body>
+</html>
