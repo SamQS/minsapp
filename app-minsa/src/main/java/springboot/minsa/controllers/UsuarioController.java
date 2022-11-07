@@ -620,4 +620,43 @@ public class UsuarioController {
 		return "citas/citadas";
 	}
 
+
+	@GetMapping("/verReferenciaEnviadaCita/{id}")
+	public String verReferenciaEnviadaCita(@PathVariable Integer id, Map<String, Object> model) {
+
+		List<Servicio> servicios = servService.findAll();
+		List<Establecimiento> establecimientos = estabServ.findAll();
+		Referencia referencia = refService.findById(id);
+		model.put("servicios", servicios);
+		model.put("establecimientos", establecimientos);
+		model.put("referencia", referencia);
+
+		return "citas/verRefCitaEnviada";
+	}
+
+	@GetMapping("/verRefParaCitar/{id}")
+	public String verReferenciaEnviadaCitaUpdateCitar(@PathVariable Integer id, Map<String, Object> model) {
+
+		List<Servicio> servicios = servService.findAll();
+		List<Establecimiento> establecimientos = estabServ.findAll();
+		Referencia referencia = refService.findById(id);
+		model.put("servicios", servicios);
+		model.put("establecimientos", establecimientos);
+		model.put("referencia", referencia);
+
+		return "citas/verRefCitaEnviadaCitar";
+	}
+
+	@GetMapping("/detalleRefCitada/{id}")
+	public String detalleRefCitada(@PathVariable Integer id, Map<String, Object> model) {
+
+		List<Servicio> servicios = servService.findAll();
+		List<Establecimiento> establecimientos = estabServ.findAll();
+		Referencia referencia = refService.findById(id);
+		model.put("servicios", servicios);
+		model.put("establecimientos", establecimientos);
+		model.put("referencia", referencia);
+
+		return "citas/detalleRefCitada";
+	}
 }
