@@ -10,9 +10,9 @@ import springboot.minsa.models.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
-	Optional<Usuario> findByDni(String dni);
+	//Optional<Usuario> findByDni(String dni);
 
-	
+	Optional<Usuario> findByDniAndPassword(String dni, String password);
 
 
 }

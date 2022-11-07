@@ -49,11 +49,15 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 
 
-	@Override
+	/*@Override
 	public Optional<Usuario> findByDni(String dni) {
 		
 		return usuarioRepository.findByDni(dni); 
 	}
-
-
+*/
+	@Override
+	public Optional<Usuario> findByDniAndPass(String dni, String password) {
+		// TODO Auto-generated method stub
+		return usuarioRepository.findByDniAndPassword(dni, password);
+	}
 }

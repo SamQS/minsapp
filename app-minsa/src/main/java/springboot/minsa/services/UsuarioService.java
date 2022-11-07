@@ -15,5 +15,7 @@ public interface UsuarioService {
 	
 	public void deleteById(Integer id);
 	
-	Optional<Usuario> findByDni(String dni);
+	//Optional<Usuario> findByDni(String dni);
+
+	Optional<Usuario> findByDniAndPass(String dni, String password);
 }
