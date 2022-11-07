@@ -631,7 +631,7 @@ public class UsuarioController {
 		model.put("establecimientos", establecimientos);
 		model.put("referencia", referencia);
 
-		return "citas/verRefParaCitar";
+		return "citas/verRefCitaEnviada";
 	}
 
 	@GetMapping("/verRefParaCitar/{id}")

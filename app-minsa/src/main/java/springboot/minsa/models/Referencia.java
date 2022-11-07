@@ -68,7 +68,7 @@ public class Referencia implements Serializable {
 	private String coordReferencia;
 
 	private String servicios;
-	
+
 	private String status;
 
 	@ManyToOne
@@ -77,6 +77,13 @@ public class Referencia implements Serializable {
 	private String condicionPaciente;
 
 	private String resumen6;
+
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column(name = "fecha_cita")
+	private Date fechaCita;
+
+	private String horaCita;
 
 	public Integer getId() {
 		return id;
@@ -126,7 +133,6 @@ public class Referencia implements Serializable {
 		this.edad = edad;
 	}
 
-	
 	public Establecimiento getEstablecimientodestino() {
 		return Establecimientodestino;
 	}
@@ -255,8 +261,6 @@ public class Referencia implements Serializable {
 		this.resumen6 = resumen6;
 	}
 
-	private static final long serialVersionUID = 1L;
-
 	public String getDniPaciente() {
 		return dniPaciente;
 	}
@@ -280,5 +284,23 @@ public class Referencia implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	public Date getFechaCita() {
+		return fechaCita;
+	}
+
+	public void setFechaCita(Date fechaCita) {
+		this.fechaCita = fechaCita;
+	}
+
+	public String getHoraCita() {
+		return horaCita;
+	}
+
+	public void setHoraCita(String horaCita) {
+		this.horaCita = horaCita;
+	}
+
+	private static final long serialVersionUID = 1L;
 
 }
