@@ -314,47 +314,21 @@ public class UsuarioController {
 
 			if (user.get().getRol().getNivel().equals("AdministrativoExterno")) {
 				return "redirect:/menuCitas";
-			} else {
-				return "redirect:/login";
-			}
-
-		}
-
-		else if (user.isPresent()) {
-
-			session.setAttribute("idusuario", user.get().getId());
-
-			if (user.get().getRol().getNivel().equals("Administrativo")) {
+			} 
+			else if (user.get().getRol().getNivel().equals("Administrativo")) {
 				return "redirect:/menuInterno";
-			} else {
-				return "redirect:/login";
 			}
-
-		}
-
-		else if (user.isPresent()) {
-
-			session.setAttribute("idusuario", user.get().getId());
-
-			if (user.get().getRol().getNivel().equals("Director")) {
+			else if (user.get().getRol().getNivel().equals("Director")) {
 				return "redirect:/director";
-			} else {
-				return "redirect:/login";
 			}
-
-		}
-
-		else if (user.isPresent()) {
-
-			session.setAttribute("idusuario", user.get().getId());
-
-			if (user.get().getRol().getNivel().equals("Asistencial")) {
+			else if (user.get().getRol().getNivel().equals("Asistencial")) {
 				return "redirect:/administrador";
-			} else {
-				return "redirect:/login";
-			}
+			} 
+			
 
 		}
+
+		
 
 		return "redirect:/login";
 	}
