@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/styleV.css }" />
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+
 <link rel="stylesheet" type="text/css"
 	href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 
@@ -11,13 +13,11 @@
 	href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css">
 </head>
 <body>
-
+	<div class="row mt-2" style="margin-left: 20px; margin-top: 20px;">
+		<img alt="" th:src="@{/imagenes/logo.jpg}" style="width: 100px">
+	</div>
 	<div class="container">
-		<div class="row mt-2">
-			<img alt="" th:src="@{/imagenes/logo.jpg}" style="width: 100px">
-		</div>
 
-		<a th:href="@{/menuCitas}">volver</a>
 
 		<h1>COODINAR CITAS</h1>
 
@@ -58,6 +58,9 @@
 				</tr>
 			</tbody>
 		</table>
+		<div>
+			<a class="btn btn-primary btn-sm my-3" th:href="@{/menuCitas}">REGRESAR</a>
+		</div>
 	</div>
 
 	<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>

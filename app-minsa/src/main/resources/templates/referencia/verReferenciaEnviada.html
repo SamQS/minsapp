@@ -15,12 +15,11 @@
 
 		<div class="card mt-4">
 			<div class="card-header bg-info text-white"
-				style="text-align: center; font-size: 20px">Formulario de
-				Referencia</div>
+				style="text-align: center; font-size: 20px">FORMULARIO DE REFERENCIA</div>
 			<div class="card-body">
 				<form th:action="@{/updateReferenciaAObservada}"
 					th:object="${referencia}" method="post">
-					<p>1-. Datos Generales</p>
+					<h4>1-. Datos Generales</h4>
 					<hr>
 					<label>Fecha:</label> <input disabled="disabled" type="date" th:field="*{fecha}">
 					<label class="ml-4">Hora:</label> <input type="text" disabled="disabled"
@@ -32,7 +31,7 @@
 						<option th:each="e:${establecimientos}" th:value="${e.id}"
 							th:text="${e.nombre}" />
 					</select> <br /> <br />
-					<p>2-. Identificacion del Usuario</p>
+					<h4>2-. Identificacion del Usuario</h4>
 					<hr>
 					<label>DNI</label> <input class="col-md-4" disabled="disabled"
 						th:field="*{dniPaciente}" type="text" /> <br> <br> <label>Apellido
@@ -66,7 +65,7 @@
 					<input disabled="disabled" type="text" th:field="*{dptoPaciente}"
 						style="margin-left: 50px" class="col-md-3" /> <br /> <br />
 
-					<p>3-. Resumen de la Historia Clinica</p>
+					<h4>3-. Resumen de la Historia Clinica</h4>
 					<hr>
 					<label>Anamnesis</label> <br />
 					<textarea th:field="*{resumen1}" rows="4" cols="130" disabled="disabled"
@@ -84,7 +83,7 @@
 					<textarea disabled="disabled" th:field="*{resumen5}" rows="4" cols="130"
 						style="resize: none"></textarea>
 					<br /> <br />
-					<p>4-. Datos de la Referencia</p>
+					<h4>4-. Datos de la Referencia</h4>
 					<hr>
 					<p>Coordinacion de la Referencia</p>
 					

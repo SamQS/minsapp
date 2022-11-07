@@ -325,10 +325,7 @@ public class UsuarioController {
 				return "redirect:/administrador";
 			} 
 			
-
 		}
-
-		
 
 		return "redirect:/login";
 	}
