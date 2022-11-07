@@ -64,7 +64,7 @@ public class UsuarioController {
 	@GetMapping("")
 	public String home() { // MENU ADMINISTRADOR
 
-		return "usuario/login";
+		return "usuario/home";
 	}
 
 	// Action : LISTAR
