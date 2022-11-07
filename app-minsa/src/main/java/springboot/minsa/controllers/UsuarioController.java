@@ -66,6 +66,10 @@ public class UsuarioController {
 
 		return "usuario/login";
 	}
+	@GetMapping("/director") // MENU ADMINISTRATIVO INTERNO
+	public String director() {
+		return "usuario/director";
+	}
 
 	// Action : LISTAR
 
