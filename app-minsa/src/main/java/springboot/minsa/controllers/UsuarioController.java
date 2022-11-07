@@ -301,15 +301,25 @@ public class UsuarioController {
 		if (user.isPresent()) {
 			session.setAttribute("idusuario", user.get().getRol());
 
-			if (user.get().getDni().equals("73078005")) { // ACCEDE AL MENU DE LAS REFERENCIAS ROL 1
-				return "redirect:/administrador";
-			} else if (user.get().getDni().equals("73078004")) { // ACCEDE AL MENU PARA REGISTRAR USUARIOS NIVEL 4
+			if (user.get().getDni().equals("73078004")) { // ACCEDE AL MENU DE LAS REFERENCIAS ROL 1
+				return "redirect:/";
+			} else if (user.get().getDni().equals("73078010")) { // ACCEDE AL MENU PARA REGISTRAR USUARIOS NIVEL 4
 				{
 					return "redirect:/";
-				}
-			} else if (user.get().getDni().equals("73078006" )) { // ACCEDE AL MENU NIVEL 2 (CENTROS - Y SERVICIOS)
+				}	
+			} else if (user.get().getDni().equals("73078005" )) { // ACCEDE AL MENU NIVEL 2 (CENTROS - Y SERVICIOS)
 				return "redirect:/menuInterno";
 			}
+			else if (user.get().getDni().equals("73078009" )) { // ACCEDE AL MENU NIVEL 2 (CENTROS - Y SERVICIOS)
+				return "redirect:/menuInterno";
+			}
+			else if (user.get().getDni().equals("73078006" )) { // ACCEDE AL MENU NIVEL 2 (CENTROS - Y SERVICIOS)
+				return "redirect:/administrador";
+			}
+			else if (user.get().getDni().equals("73078008" )) { // ACCEDE AL MENU NIVEL 2 (CENTROS - Y SERVICIOS)
+				return "redirect:/administrador";
+			}
+			
 		}
 
 		return "redirect:/";
