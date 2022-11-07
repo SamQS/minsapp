@@ -2,9 +2,9 @@ name: Java CI with Maven Deploy to heroku
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build_webapi:
