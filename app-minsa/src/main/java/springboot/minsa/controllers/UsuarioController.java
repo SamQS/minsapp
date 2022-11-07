@@ -320,7 +320,7 @@ public class UsuarioController {
 
 		}
 
-		if (user.isPresent()) {
+		else if (user.isPresent()) {
 
 			session.setAttribute("idusuario", user.get().getId());
 
@@ -332,7 +332,7 @@ public class UsuarioController {
 
 		}
 
-		if (user.isPresent()) {
+		else if (user.isPresent()) {
 
 			session.setAttribute("idusuario", user.get().getId());
 
@@ -344,7 +344,7 @@ public class UsuarioController {
 
 		}
 
-		if (user.isPresent()) {
+		else if (user.isPresent()) {
 
 			session.setAttribute("idusuario", user.get().getId());
 
