@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Minsa</title>
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<img alt="" th:src="@{/imagenes/logo.jpg}" style="width: 100px">
+		</div>
+
+		<div class="row">
+			<div class="col-md-6" style="margin-top: 250px">
+				<ul class="list-group">
+					<li class="list-group-item border-white"><a
+						class="btn btn-secondary" th:href="@{/citasPendientes}">COORDINAR CITAS</a></li>
+					<li class="list-group-item border-white"><a
+						class="btn btn-secondary" href="#">REPORTE DE ESTADO DE REFERENCIAS</a></li>
+
+					<li class="list-group-item border-white"><a
+						class="btn btn-secondary" th:href="@{/cerrar}">Cerrar Sesion</a>
+				</ul>
+			</div>
+			<div class="col-md-6" style="margin-top: 75px">
+				<img alt="imagen_minsa" th:src="@{/imagenes/img2.png}">
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/funciones.js}"></script>
+</body>
+</html>

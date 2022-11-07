@@ -71,6 +71,12 @@ public class UsuarioController {
 		return "usuario/director";
 	}
 
+	@GetMapping("/menuCitas")
+	public String menuCitas() {
+
+		return "usuario/menuCitas";
+	}
+
 	// Action : LISTAR
 
 	@GetMapping("/listar")
@@ -438,6 +444,17 @@ public class UsuarioController {
 
 		return "redirect:/listarRefPendientes";
 	}
+	
+	// CAMBIO A PENDIENTE
+	@GetMapping("/actualizarDeAlta/{id}")
+	public String modificarDeAlta(@PathVariable Integer id) {
+
+		Referencia referencia = refService.findById(id);
+
+		refService.actualizarAlta(referencia.getId());
+
+		return "redirect:/citasEnviadas";
+	}
 
 	// EDITAR REFERENCIAS
 	@GetMapping("/verReferencia/{id}")
@@ -547,7 +564,60 @@ public class UsuarioController {
 		return "redirect:/listarRefPendientes";
 	}
 	
+	@GetMapping("/citasPendientes")
+	public String citasPendientes(Map<String, Object> model) {
+
+		List<Referencia> refEnviadas = refService.findEnviadas();
+
+		model.put("refEnviadas", refEnviadas);
+
+		return "citas/enviadas";
+	}
+
+	@PostMapping("/updateReferenciaACitada")
+	public String updateReferenciaACitada(Referencia referencia) {
+
+		Referencia ref = refService.findById(referencia.getId());
+
+		Servicio servicio = servServices.getOne(ref.getEspecialidadDestino().getId());
+
+		referencia.setStatus("CITADA");
+		referencia.setFecha(ref.getFecha());
+		referencia.setHora(ref.getHora());
+		referencia.setOrigen(ref.getOrigen());
+		referencia.setEstablecimientodestino(ref.getEstablecimientodestino());
+		referencia.setEspecialidadDestino(servicio);
+		referencia.setDniPaciente(ref.getDniPaciente());
+		referencia.setNomPaciente(ref.getNomPaciente());
+		referencia.setApePatPaciente(ref.getApePatPaciente());
+		referencia.setApeMatPaciente(ref.getApeMatPaciente());
+		referencia.setGenero(ref.getGenero());
+		referencia.setEdad(ref.getEdad());
+		referencia.setDirecPaciente(ref.getDirecPaciente());
+		referencia.setDistriPaciente(ref.getDistriPaciente());
+		referencia.setDptoPaciente(ref.getDptoPaciente());
+		referencia.setResumen1(ref.getResumen1());
+		referencia.setResumen2(ref.getResumen2());
+		referencia.setResumen3(ref.getResumen3());
+		referencia.setResumen4(ref.getResumen4());
+		referencia.setResumen5(ref.getResumen5());
+		referencia.setResumen6(referencia.getResumen6());
+		referencia.setCoordReferencia(ref.getCoordReferencia());
+		referencia.setServicios(ref.getServicios());
+		referencia.setCondicionPaciente(ref.getCondicionPaciente());
+		refService.save(referencia);
+
+		return "redirect:/citasPendientes";
+	}
 	
-	
+	@GetMapping("/citasEnviadas")
+	public String citasEnviadas(Map<String, Object> model) {
+
+		List<Referencia> refCitadas = refService.findCitadas();
+
+		model.put("refCitadas", refCitadas);
+
+		return "citas/citadas";
+	}
 
 }

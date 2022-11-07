@@ -99,4 +99,10 @@ public class ReferenciaServiceImpl implements ReferenciaService {
 		refeRepository.actualizarEstadoPendiente(id);
 	}
 
+	@Override
+	@Transactional
+	public void actualizarAlta(Integer id) {
+		// TODO Auto-generated method stub
+		refeRepository.actualizarEstadoDeAlta(id);
+	}
 }

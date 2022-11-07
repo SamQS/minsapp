@@ -50,4 +50,8 @@ public interface ReferenciaRepository extends JpaRepository<Referencia, Integer>
 	@Modifying
 	public void actualizarEstadoPendiente(Integer id);
 	
+
+	@Query("UPDATE Referencia r SET r.status = 'ALTA' where r.id = ?1")
+	@Modifying
+	public void actualizarEstadoDeAlta(Integer id);
 }

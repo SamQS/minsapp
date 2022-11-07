@@ -31,6 +31,6 @@ public interface ReferenciaService {
 	
 	public void actualizarPendiente(Integer id );	//a pendiente
 	
-	
+	public void actualizarAlta(Integer id );	//a de alta
 	
 }
