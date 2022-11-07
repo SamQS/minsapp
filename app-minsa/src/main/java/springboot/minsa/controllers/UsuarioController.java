@@ -302,10 +302,10 @@ public class UsuarioController {
 			session.setAttribute("idusuario", user.get().getRol());
 
 			if (user.get().getDni().equals("73078004")) { // ACCEDE AL MENU DE LAS REFERENCIAS ROL 1
-				return "redirect:/";
+				return "redirect:/acceder";
 			} else if (user.get().getDni().equals("73078010")) { // ACCEDE AL MENU PARA REGISTRAR USUARIOS NIVEL 4
 				{
-					return "redirect:/";
+					return "redirect:/acceder";
 				}	
 			} else if (user.get().getDni().equals("73078005" )) { // ACCEDE AL MENU NIVEL 2 (CENTROS - Y SERVICIOS)
 				return "redirect:/menuInterno";
@@ -322,7 +322,7 @@ public class UsuarioController {
 			
 		}
 
-		return "redirect:/";
+		return "redirect:/acceder";
 	}
 
 	// Cerrar sesion
