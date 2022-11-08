@@ -55,7 +55,7 @@
 					<td th:text="${c.especialidadDestino.nombre}"></td>
 					<td th:text="${c.Establecimientodestino.nombre}"></td>
 					<td style="display: none;" th:text="${c.fecha}"></td>
-					<td><a style="margin-right: 10px" href="#" class="btn btn-success btn-xs">Ver</a>
+					<td>
 						<a style="margin-right: 10px"  th:href="@{/detalleRefCitada/{id} (id=${c.id})}" class="btn btn-success btn-xs">Detalles</a>
 						
 				</tr>
