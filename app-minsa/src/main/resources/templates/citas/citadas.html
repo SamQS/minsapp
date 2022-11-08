@@ -53,6 +53,10 @@
 					<td th:text="${e.especialidadDestino.nombre}"></td>
 					<td style="display: none;" th:text="${e.Establecimientodestino.nombre}"></td>
 					<td style="display: none;" th:text="${e.fecha}"></td>
+					<td><a style="margin-right: 10px"  th:href="@{/detalleRefCitada/{id} (id=${e.id})}" class="btn btn-success btn-xs">DETALLES</a>
+						<a style="margin-right: 10px"  th:href="@{/actualizarDeAlta/{id} (id=${e.id})}" class="btn btn-info btn-xs">DAR DE ALTA</a>
+					</td>
+
 
 				</tr>
 			</tbody>

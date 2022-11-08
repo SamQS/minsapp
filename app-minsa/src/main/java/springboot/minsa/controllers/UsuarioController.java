@@ -527,13 +527,7 @@ public class UsuarioController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
+
 
 	// EDITAR REFERENCIA DE PENDIENTE A OBSERVADA
 	@PostMapping("/updateReferenciaAObservada")
