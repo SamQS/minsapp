@@ -56,7 +56,9 @@
 					<td th:text="${o.especialidadDestino.nombre}"></td>
 					<td th:text="${o.Establecimientodestino.nombre}"></td>
 					<td style="display: none;" th:text="${o.fecha}"></td>
-					<td><a style="margin-right: 10px" th:href="@{/verReferenciaObservada/{id} (id=${o.id})}" class="btn btn-success btn-xs">Ver</a><a style="margin-right: 10px" th:href="@{/actualizarPendiente/{id} (id=${o.id})}" class="btn btn-info btn-xs">Reenviar</a><a th:href="@{/actualizarAnuladas/{id} (id=${o.id})}" class="btn btn-danger btn-xs">Cancelar</a></td>
+					<td><a style="margin-right: 10px" th:href="@{/verReferenciaObservada/{id} (id=${o.id})}" class="btn btn-success btn-xs">Ver</a>
+						<a style="margin-right: 10px" th:href="@{/actualizarPendiente/{id} (id=${o.id})}" class="btn btn-info btn-xs">Reenviar</a>
+						<a th:href="@{/actualizarAnuladas/{id} (id=${o.id})}" class="btn btn-danger btn-xs">Cancelar</a></td>
 				</tr>
 			</tbody>
 		</table>

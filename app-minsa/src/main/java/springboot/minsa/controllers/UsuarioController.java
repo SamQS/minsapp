@@ -490,6 +490,19 @@ public class UsuarioController {
 
 		return "referencia/verReferenciaObservada";
 	}
+
+	@GetMapping("/verReferenciaObservadaa/{id}")
+	public String verReferenciaObservada(@PathVariable Integer id, Map<String, Object> model) {
+
+		List<Servicio> servicios = servService.findAll();
+		List<Establecimiento> establecimientos = estabServ.findAll();
+		Referencia referencia = refService.findById(id);
+		model.put("servicios", servicios);
+		model.put("establecimientos", establecimientos);
+		model.put("referencia", referencia);
+
+		return "referencia/verReferenciaObservadaa";
+	}
 	
 	
 	@GetMapping("/habilitarCamposRefObserv/{id}")
@@ -654,4 +667,5 @@ public class UsuarioController {
 
 		return "citas/detalleRefCitada";
 	}
+
 }
