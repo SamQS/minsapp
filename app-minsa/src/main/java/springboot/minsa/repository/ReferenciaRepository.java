@@ -1,10 +1,12 @@
 package springboot.minsa.repository;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import springboot.minsa.models.Referencia;
 
@@ -23,7 +25,33 @@ public interface ReferenciaRepository extends JpaRepository<Referencia, Integer>
 	
 	@Query("SELECT r FROM Referencia r WHERE r.status = 'CITADA'")
 	List<Referencia> referenciasCitadas();
+
+
+
+	@Query("SELECT  count(*) FROM Referencia WHERE status = 'PENDIENTE'")
+	List<Object> referenciasContadasPendientes();
+
+	@Query("SELECT  count(*) FROM Referencia r WHERE status = 'OBSERVADA'")
+	List<Object> referenciasContadasObservadas();
+
+	@Query("SELECT  count(*) FROM Referencia r WHERE r.status = 'ENVIADA'")
+	List<Object> referenciasContadasEnviadas();
+
+	@Query("SELECT  count(*) FROM Referencia r WHERE status = 'CITADA'")
+	List<Object> referenciasContadasCitada();
+
+	@Query("SELECT  count(*) FROM Referencia r WHERE status = 'ALTA'")
+	List<Object> referenciasContadasAlta();
+
+	@Query("SELECT  count(*) FROM Referencia  WHERE status = 'ANULADA'")
+	List<Object> referenciasContadasAnulada();
+
+	@Query("SELECT  count(*) FROM Referencia ")
+	List<Object> referenciasContadas();
 	
+	
+	
+
 	
 	
 	//Actualizar los estados	
@@ -54,4 +82,9 @@ public interface ReferenciaRepository extends JpaRepository<Referencia, Integer>
 	@Query("UPDATE Referencia r SET r.status = 'ALTA' where r.id = ?1")
 	@Modifying
 	public void actualizarEstadoDeAlta(Integer id);
+
+
+
+
+
 }

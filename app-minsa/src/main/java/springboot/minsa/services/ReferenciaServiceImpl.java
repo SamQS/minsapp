@@ -1,6 +1,7 @@
 package springboot.minsa.services;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,6 +55,58 @@ public class ReferenciaServiceImpl implements ReferenciaService {
 		// TODO Auto-generated method stub
 		return refeRepository.referenciasEnviadas();
 	}
+
+	
+
+
+
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Object> findRPendientes() {
+		// TODO Auto-generated method stub
+		return refeRepository.referenciasContadasPendientes();
+	}	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Object> findRObservadas() {
+		// TODO Auto-generated method stub
+		return refeRepository.referenciasContadasObservadas();
+	}	@Override
+	@Transactional(readOnly = true)
+	public List<Object> findREnviadas() {
+		// TODO Auto-generated method stub
+		return refeRepository.referenciasContadasEnviadas();
+	}	@Override
+	@Transactional(readOnly = true)
+	public List<Object> findRCitada() {
+		// TODO Auto-generated method stub
+		return refeRepository.referenciasContadasCitada();
+	}	@Override
+	@Transactional(readOnly = true)
+	public List<Object> findRAlta() {
+		// TODO Auto-generated method stub
+		return refeRepository.referenciasContadasAlta();
+	}	@Override
+	@Transactional(readOnly = true)
+	public List<Object> findRAnulada() {
+		// TODO Auto-generated method stub
+		return refeRepository.referenciasContadasAnulada();
+	}	@Override
+	@Transactional(readOnly = true)
+	public List<Object> findRCont() {
+		// TODO Auto-generated method stub
+		return refeRepository.referenciasContadas();
+	}
+
+
+
+
+
+
+
+
+
 
 	@Override
 	@Transactional

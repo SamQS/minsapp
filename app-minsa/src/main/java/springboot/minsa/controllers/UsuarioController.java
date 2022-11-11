@@ -1,5 +1,7 @@
 package springboot.minsa.controllers;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -24,6 +26,7 @@ import springboot.minsa.models.Establecimiento;
 import springboot.minsa.models.Profesion;
 import springboot.minsa.models.Referencia;
 import springboot.minsa.models.Usuario;
+import springboot.minsa.repository.ReferenciaRepository;
 import springboot.minsa.repository.UsuarioRepository;
 import springboot.minsa.services.EstablecimientoService;
 import springboot.minsa.services.NivelService;
@@ -60,6 +63,9 @@ public class UsuarioController {
 
 	@Autowired
 	private EstablecimientoService estabServ;
+
+	@Autowired
+	private ReferenciaRepository refRepositoryy;
 
 	@GetMapping("")
 	public String home() { // MENU ADMINISTRADOR
@@ -673,5 +679,50 @@ public class UsuarioController {
 
 		return "citas/detalleRefCitadaa";
 	}
+//reportes
 
+
+	@GetMapping("/reporteEstadoReferencias")
+	public String reporteEstadoReferencias(Model model) {
+
+		
+		
+		List<Referencia> referencias = refService.findAll();
+		model.addAttribute("referencias", referencias);
+		return "referencia/reporteEstadoReferencias";
+
+		
+	}
+	
+	@GetMapping("/reporteReferenciaDia")
+	public String referenciasContadasPendientes(Model model) {
+
+		List<Object> referenciasP= refService.findRPendientes();		
+		
+		List<Object> referenciasO = refService.findRObservadas();
+		List<Object> referenciasE = refService.findREnviadas();
+		List<Object> referenciasC = refService.findRCitada();
+		List<Object>referenciasA = refService.findRAlta();
+		List<Object> referenciasAn = refService.findRAnulada();
+		List<Object> referenciasT = refService.findRCont();
+
+
+		model.addAttribute("referenciasP", referenciasP);
+		model.addAttribute("referenciasO", referenciasO);
+		model.addAttribute("referenciasE", referenciasE);
+		model.addAttribute("referenciasC", referenciasC);
+		model.addAttribute("referenciasA", referenciasA);
+		model.addAttribute("referenciasAn", referenciasAn);
+		model.addAttribute("referenciasT", referenciasT);
+
+
+
+
+		return "referencia/reporteReferenciaDia";
+	}
+
+
+	public List<Object> findRPendientes() {
+        return refService.findRPendientes();
+    }
 }

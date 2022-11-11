@@ -1,6 +1,7 @@
 package springboot.minsa.services;
 
 import java.util.List;
+import java.util.Map;
 
 import springboot.minsa.models.Referencia;
 
@@ -17,6 +18,29 @@ public interface ReferenciaService {
 	List<Referencia> findObservadas();
 	
 	List<Referencia> findEnviadas();
+
+
+	List<Object> findRPendientes();
+
+	List<Object> findRObservadas();
+
+	List<Object> findREnviadas();
+
+	List<Object> findRCitada();
+
+	List<Object> findRAlta();
+
+	List<Object> findRAnulada();
+
+	List<Object> findRCont();
+
+
+
+
+
+
+
+
 	
 	public void actualizarEstado(Integer id ); // a enviado
 	
