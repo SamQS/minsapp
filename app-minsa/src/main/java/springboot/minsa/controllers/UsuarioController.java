@@ -698,7 +698,6 @@ public class UsuarioController {
 	public String referenciasContadasPendientes(Model model) {
 
 		List<Object> referenciasP= refService.findRPendientes();		
-		
 		List<Object> referenciasO = refService.findRObservadas();
 		List<Object> referenciasE = refService.findREnviadas();
 		List<Object> referenciasC = refService.findRCitada();
