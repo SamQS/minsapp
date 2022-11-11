@@ -724,4 +724,17 @@ public class UsuarioController {
 	public List<Object> findRPendientes() {
         return refService.findRPendientes();
     }
+
+
+	@GetMapping("/reporteUsuario")
+	public String reporteUsuario(Model model) {
+
+		
+		
+		List<Referencia> referencias = refService.findAll();
+		model.addAttribute("referencias", referencias);
+		return "usuario/reporteUsuario";
+
+		
+	}
 }
