@@ -57,10 +57,6 @@ public class ReferenciaServiceImpl implements ReferenciaService {
 	}
 
 	
-
-
-
-
 	@Override
 	@Transactional(readOnly = true)
 	public List<Object> findRPendientes() {

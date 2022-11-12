@@ -19,7 +19,7 @@
 			<div class="card-body">
 				<form th:action="@{/updateReferenciaAObservada}"
 					th:object="${referencia}" method="post">
-					<h4>1-. Datos Generales</h4>
+					<h4>1-. Datos Generaless</h4>
 					<hr>
 					<label>Fecha:</label> <input disabled="disabled" type="date"
 						th:field="*{fecha}"> <label class="ml-4">Hora:</label> <input
@@ -123,10 +123,9 @@
 					<br /> <br /> <br> <br> <br> <br> <br>
 
 					<div style="margin-left: 300px" class="mb-4">
-						<a style="display: inline-block; width: 150px" th:href="@{/verRefParaCitar/{id} (id=${id})}"
-							class="btn btn-primary">Citar</a> <input
-							style="display: inline-block; width: 150px; margin-left: 150px"
-							type="submit" class="btn btn-primary" value="Observar" />
+						<a style="display: inline-block; width: 150px" th:href="@{/verRefParaCitar/{id} (id=${id})}" class="btn btn-primary">Citar</a> 
+
+						<input style="display: inline-block; width: 150px; margin-left: 150px" type="submit" class="btn btn-primary" value="Observar" />
 					</div>
 					<div style="margin-left: 402px">
 						<a style="margin-left: 50px; display: block; width: 150px"
