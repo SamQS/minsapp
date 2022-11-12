@@ -471,6 +471,27 @@ public class UsuarioController {
 		return "referencia/verReferenciaPendiente";
 	}
 
+	@GetMapping("/verReferenciaS/{id}")
+	public String verReferenciaS(@PathVariable Integer id, Map<String, Object> model) {
+
+		List<Servicio> servicios = servService.findAll();
+		List<Establecimiento> establecimientos = estabServ.findAll();
+		Referencia referencia = refService.findById(id);
+		model.put("servicios", servicios);
+		model.put("establecimientos", establecimientos);
+		model.put("referencia", referencia);
+
+		return "referencia/verReferenciaS";
+	}
+
+
+
+
+
+
+
+	//----
+
 	@GetMapping("/verReferenciaEnviada/{id}")
 	public String verReferenciaEnviada(@PathVariable Integer id, Map<String, Object> model) {
 

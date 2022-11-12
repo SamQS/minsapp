@@ -57,6 +57,7 @@ table th {
 					<th scope="col">Apellido Materno</th>
 					<th scope="col">Especialidad</th>
 					<th scope="col">Estado</th>
+					<th scope="col">Detalle</th>
 					<th style="display: none;" scope="col">Fecha</th>
 				</tr>
 			</thead>
@@ -69,6 +70,8 @@ table th {
 					<td th:text="${ref.especialidadDestino.nombre}"></td>
 					<td th:text="${ref.status}"></td>
 					<td style="display: none;" th:text="${ref.fecha}"></td>
+					<td><a style="margin-right: 10px" th:href="@{/verReferenciaS/{id} (id=${ref.id})}" class="btn btn-success btn-xs">Ver</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
