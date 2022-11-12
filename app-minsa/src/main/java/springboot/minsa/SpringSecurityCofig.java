@@ -1,4 +1,4 @@
-package springboot.minsa;
+/*package springboot.minsa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -51,4 +51,4 @@ public class SpringSecurityCofig {
     	.withUser(users.username("80808080").password("1234").roles("ADMIN"));
     }
 
-}
+}*/
