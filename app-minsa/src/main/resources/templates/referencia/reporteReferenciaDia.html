@@ -33,7 +33,7 @@ table th {
 
 		
 
-		<h1>REPORTE ESTADO DE REFERENCIAS</h1>
+		<h1>REPORTE ESTADO DE REFERENCIAS POR DIA</h1>
 
 		<table class="table col-md-4">
 			<tbody>
@@ -58,18 +58,20 @@ table th {
 					<th style="background-color: #17A2B8" scope="col">Alta</th>
 					<th style="background-color: #17A2B8" scope="col">Inhabilitadas</th>
                     <th style="background-color: #17A2B8" scope="col">Totales</th>
+					
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td style="font-size: 25px;font-family: monospace;" th:text="${referenciasP}"></td>
 					
+					<td style="font-size: 25px;font-family: monospace;" th:text="${referenciasP}"></td>		
 					<td style="font-size: 25px; font-family: monospace;"th:text="${referenciasO}" ></td>
 					<td style="font-size: 25px;font-family: monospace;" th:text="${referenciasE}"></td>
 					<td style="font-size: 25px;font-family: monospace;" th:text="${referenciasC}"></td>
 					<td style="font-size: 25px;font-family: monospace;" th:text="${referenciasA}"></td>
 					<td style="font-size: 25px;font-family: monospace;" th:text="${referenciasAn}"></td>
 					<td style="font-size: 25px;font-family: monospace;" th:text="${referenciasT}"></td>
+					<td style="display: none;" th:text="${fecha}"></td>
+					
 				<td ></td>
 				</tr>
 			</tbody>
